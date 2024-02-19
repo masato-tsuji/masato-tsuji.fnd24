@@ -351,13 +351,14 @@ body {
 #heat_temp {
     display: flex;
     width: 420px;
-    padding: 0px 15px;
-    justify-content: space-between;
+    /* padding: 0px 15px; */
+    /* justify-content: space-between; */
 }
 
 
 #heat_temp span {
     font-size: 18px;
+    padding: 0px 38px;
 }
 
 .heat-radio {
