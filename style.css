@@ -1,0 +1,466 @@
+/* 
+* 命名規則 - class名はkebab, id名はsnake 
+*/
+
+/* debug用 通常非表示 */
+#vb_monitor {
+    display: none;
+    position: absolute;
+    background-color: rgb(218, 255, 178);
+}
+
+/* 共通 */
+body {
+    background-color: skyblue;
+    color: rgb(128,128,128);
+    font-size: 20px;
+}
+
+.anime-fadein {
+    animation: fadein 1s;
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+        display: block;
+    }
+    to {
+        opacity: 1;
+        display: block;
+    }
+}
+
+.anime-fadeout {
+    opacity: 1;
+    animation: fadeout 1s;
+}
+@keyframes fadeout {
+    from { opacity: 1; }
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+
+/* --- メニューエリア --- */
+#menu_area {
+    position:  absolute;
+    top: 8%;
+    left: 3%;
+    height: 510px;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 0px 0px 5px rgb(223, 239, 255);
+    border-radius: 15px;
+    padding: 20px;
+    color: #454545;
+}
+
+.menu-btn {
+    background: #d1f5a8;
+    box-shadow: 0px 0px 0px 5px #d1f5a8;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    margin-bottom: 20px;
+    color: #180474;
+    font-size: 20px;
+    text-align: center;
+    opacity: 100%;
+}
+
+.menu-btn:hover {
+    background-color: #00a118;
+    box-shadow: 0px 0px 0px 5px #00a118;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-btn:active {
+    transform: translateY(3px);
+    cursor: pointer;
+}
+
+/* メニュー内コンフィグ エリア*/
+#config_area {
+    margin-top: 40px;
+}
+
+/* トグルスイッチ */
+.cnf-tgl {
+    position: relative;
+    height: 35px;
+    margin-top: 20px;
+    font-size: 20px;    /*サイズに指定にトグルサイズ追従*/
+}
+
+.cnf-tgl > input {
+    display: none;
+}
+
+.cnf-tgl > label {
+    display: block;
+    position: relative;
+    width: 2.8em;
+    height: 1.5em;
+    border-radius: 1.5em;
+    background-color: #dadada;
+    cursor: pointer;
+}
+
+.cnf-tgl > input:checked + label {
+    background-color: #00a118;
+}
+
+.cnf-tgl > label::before {
+    content: "";
+    position: absolute;
+    top: 0.1em;
+    left: 0.1em;
+    width: calc(1.5em - 0.2em);
+    height: calc(1.5em - 0.2em);
+    border-radius: calc(1.5em - 0.2em);
+    background-color: #fff;
+    transition: 0.5s;
+}
+
+.cnf-tgl > input:checked + label::before {
+    left: calc(100% - 1.5em + 0.05em);
+}
+
+.cnf-tgl > span {
+    position: relative;
+    top: -28px;
+    left: 70px;
+    color: #aaaaaa;
+}
+
+.cnf-tgl > input:checked + label + span {
+    color: #180474;
+    font-weight: bold;
+}
+
+.cnf-tgl > #disp_pref_highlite:checked + #pref24 {
+    fill: #ff11c7;
+}
+
+
+/* アプリ共通 */
+.contents-box {
+    display: none;
+    position:  absolute;
+    text-align: center;
+    top: 8%;
+    left: 20%;
+    /* height: 470px; */
+    width: 300px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 0px 0px 5px #dfefff;
+    border-radius: 15px;
+    padding: 20px; /*0.2em 0.5em;*/
+    color: #454545;
+}
+
+
+/* --- 都道府県を知ろう エリア --- */
+#knowit_area {
+    /* display: block; */
+    height: 450px;
+}
+
+#knowit_summary {
+    text-align: left;
+    padding-left: 0px 5px;
+    font-size: 20px;
+}
+
+/* #knowit_summary::after { */
+.typing-display::after {
+    content: "|";
+    animation: blinking 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes blinking {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+
+/* --- 都道府県クイズ ナビエリア --- */
+#navi_description {
+    width: 300px;
+    height: 70px;
+}
+
+#navi_option {
+    height: 35px;
+    padding-top: 10px;
+    background-color: rgb(202, 226, 234);
+}
+
+#navi_message {
+    height: 60px;
+    margin: 0px;
+    padding-top: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#navi_question {
+    height: 70px;
+    font-size: 38px;
+    font-weight: bold;
+    color: blue;
+    padding-top: 15px;
+    text-align: center;
+    border: 1px solid;
+}
+
+#navi_result {
+    height: 40px;
+    font-size: 28px;
+    /* font-weight: bold; */
+    /* color: blue; */
+    text-align: center;
+    margin-top: 10px;
+}
+
+.navi-flow {
+    display: inline-flex;
+    /* height: 40px; */
+    text-align: center;
+    font-size: 24px;
+    padding-top: 15px;
+}
+
+#navi_count {
+    vertical-align: middle;
+    width: 50px;
+    text-align: right;
+    margin-right: 5px;
+    font-size: 26;
+    font-weight: bold;}
+
+#navi_denominator {
+    vertical-align: middle;
+    text-align: left;
+    width: 60px;
+}
+
+#navi_time {
+    width: 100px;
+}
+
+#navi_buttons {
+    margin-top: 15px;
+    text-align: center;
+    /* background-color: skyblue; */
+}
+
+.navi-btn {
+    font-size: 20px;
+}
+
+
+/* --- レコードエリア --- */
+#record_area {
+    display: none;
+    position:  absolute;
+    /* text-align: center; */
+    top: 60%;
+    left: 75%;
+    /* height: 470px; */
+    /* width: 220px; */
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 0px 0px 5px #dfefff;
+    border-radius: 15px;
+    padding: 20px; /*0.2em 0.5em;*/
+    color: #454545;
+}
+
+#record_tbl, th, td {
+    /* height: 470px; */
+    /* width: 220px; */
+    border-collapse: collapse;
+    border: 1px solid gray;
+    padding: 5px 15px 5px 5px;
+    margin: 3px;
+    font-size: 20px;
+    
+}
+
+
+/* --- メッセージボックス --- */
+.msg-box {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    color: white;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-align: center;
+    color: #180474;
+}
+
+.show {
+    display: block;
+    opacity: 1;
+}
+
+#msg_icon {
+    font-size: 60px;
+}
+
+#msg_message {
+    color: #180474;
+    opacity: 100%;
+}
+
+#msg_record {
+    margin: 10px 0px;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    opacity: 100%;
+}
+
+
+
+/* --- ヒートマップエリア --- */
+#heat_area {
+    /* display: block; */
+    height: 450px;
+}
+
+
+
+/* マップ用ピン */
+.map-pin {
+    font-size: 35px;
+    display: none;
+    vertical-align: middle;
+    color: #f27c7c;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.8em;
+    height: 0.8em;
+    background: currentColor;
+    border: 0.1em solid currentColor;
+    border-radius: 40% 60% 0% 100% / 40% 100% 0% 60%;
+    box-sizing: content-box;
+    transform: rotate(45deg);
+}
+
+.map-pin::before {
+    content: '';
+    position: absolute;
+    top: 18%;
+    left: 18%;
+    width: 0.336em;
+    height: 0.336em;
+    background: #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+
+/* --- マップエリア --- */
+#map_area {
+    background-color: skyblue;
+}
+
+#pref_line {
+    display: none;
+}
+
+#svg_japan {
+    fill: #fea;
+    stroke-width: 20px;
+}
+
+.jp-pref:hover {
+    fill: orange;
+    cursor: pointer;
+}
+
+.jp-pref-name {
+    display: none;
+}
+
+
+/* プレゼンオープニング */
+#presen_opening {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    /* height: 760px; */
+    height: 85%;
+    width: 98%;
+    padding-top: 5%;
+    border-radius: 30px;
+    background-color: white;
+    text-align: center;
+    opacity: 90%;
+}
+#opening_start {
+    font-size: 30px;
+}
+#presen_opening h1 {
+    height: 90px;
+    font-size: 64px;
+}
+#prsen_description {
+    display: none;
+    margin-bottom: 50px;
+    font-size: 36px;
+    text-shadow:1px 1px 0 #fff, 2px 2px 0 #2a2a2a;
+}
+#presen_opening p {
+    display: none;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+#presen_opening ul {
+    display: none;
+    margin: auto;
+    margin-left: 600px;
+    margin-bottom: 80px;
+    height: 150px;
+    width: 900px;
+    text-align: left;
+    font-size: 24px;
+}
+#presen_opening li {
+    margin-top: 20px;
+}
+#presen_enter {
+    position:absolute;
+    display: none;
+    left: 50%;
+    width: 90px;
+    font-size: 30px;
+    transform: translate(-50%,-50%);
+}
+.presen-btn:hover {
+    color: rgb(255, 132, 0);
+    cursor: pointer;
+    font-weight: bold;
+}
+.presen-list:hover {
+    color: rgb(255, 132, 0);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 30px;
+}
+
