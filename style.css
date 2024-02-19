@@ -339,15 +339,30 @@ body {
     height: 300px;
 }
 
+
 #heat_color {
+    display: flex;
     height: 30px;
-    margin: 10px 0px;
+    width: 450px;
+    margin: 5px 0px;
     
 }
 
+#heat_temp {
+    display: flex;
+    width: 420px;
+    padding: 0px 15px;
+    justify-content: space-between;
+}
+
+
+#heat_temp span {
+    font-size: 18px;
+}
+
 .heat-radio {
-    margin: 15px 0px;
-    padding: 5px;
+    margin: 10px 0px;
+    padding: 3px;
     border-top: 1px solid rgb(161, 161, 161);
 }
 
