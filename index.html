@@ -115,33 +115,37 @@
 
     <div class="map-app contents-box anime-fadein" id="heat_area">
 
-
-      <form name="heat_year">
-        <input name="opt_year" type='radio' value="2021">2021年
-        <input name="opt_year" type='radio' value="2022">2022年
-        <input name="opt_year" type='radio' value="2023">2023年
+      <form class="heat-radio" name="heat_year">
+        <input name="radio_year" type='radio' value="2021">2021年
+        <input name="radio_year" type='radio' value="2022">2022年
+        <input name="radio_year" type='radio' value="2023">2023年
       </form>
 
-      <form name="heat_month">
-        <input name="opt_month" type='radio' value="1">1月
-        <input name="opt_month" type='radio' value="2">2月
-        <input name="opt_month" type='radio' value="3">3月
-        <input name="opt_month" type='radio' value="4">4月
-        <input name="opt_month" type='radio' value="5">5月
-        <input name="opt_month" type='radio' value="6">6月
-        <input name="opt_month" type='radio' value="7">7月
-        <input name="opt_month" type='radio' value="8">8月
-        <input name="opt_month" type='radio' value="9">9月
-        <input name="opt_month" type='radio' value="10">10月
-        <input name="opt_month" type='radio' value="11">11月
-        <input name="opt_month" type='radio' value="12">12月
+      <form class="heat-radio" name="heat_month">
+        <input name="radio_month" type='radio' value="1">1月
+        <input name="radio_month" type='radio' value="2">2月
+        <input name="radio_month" type='radio' value="3">3月
+        <input name="radio_month" type='radio' value="4">4月
+        <input name="radio_month" type='radio' value="5">5月
+        <input name="radio_month" type='radio' value="6">6月
+        <br>
+        <input name="radio_month" type='radio' value="7">7月
+        <input name="radio_month" type='radio' value="8">8月
+        <input name="radio_month" type='radio' value="9">9月
+        <input name="radio_month" type='radio' value="10">10月
+        <input name="radio_month" type='radio' value="11">11月
+        <input name="radio_month" type='radio' value="12">12月
       </form>
 
-      <form name="heat_kind">
-        <input name="opt_kind" type='radio' value="max">最大
-        <input name="opt_kind" type='radio' value="min">最小
-        <input name="opt_kind" type='radio' value="ave">平均
+      <form class="heat-radio" name="heat_kind">
+        <input name="radio_kind" type='radio' value="max">最大
+        <input name="radio_kind" type='radio' value="min">最小
+        <input name="radio_kind" type='radio' value="ave">平均
       </form>
+
+      <div id="heat_templ">
+
+      </div>
 
       <div id="heat_buttons">
         <button class="heat-btn" id="heat_exec" type="button">実 行</button>

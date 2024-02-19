@@ -206,9 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 各県クリックイベント（※debug or 将来用）
     document.querySelectorAll(".jp-pref").forEach( elm => {
-        if (elm.id === "pref_line") {
-            return;
-        }
         elm.addEventListener("click", (e) => {
             // console.log(getPrefInfo(elm.id).prefName);
         });

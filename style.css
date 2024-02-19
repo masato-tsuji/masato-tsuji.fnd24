@@ -333,12 +333,16 @@ body {
 }
 
 
-
 /* --- ヒートマップエリア --- */
 #heat_area {
-    /* display: block; */
-    height: 450px;
+    width: 420px;
+    height: 250px;
 }
+
+.heat-radio {
+    margin-bottom: 20px;
+}
+
 
 
 
