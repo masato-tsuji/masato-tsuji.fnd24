@@ -211,13 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         elm.addEventListener("click", (e) => {
             // console.log(getPrefInfo(elm.id).prefName);
-
-
-            elm.style.fill = "#94EB85";
-            
-
-
-
         });
     });
 
