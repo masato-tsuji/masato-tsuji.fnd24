@@ -348,6 +348,7 @@ body {
 .heat-radio {
     margin: 15px 0px;
     padding: 5px;
+    border-top: 1px solid rgb(161, 161, 161);
 }
 
 
