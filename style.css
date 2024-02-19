@@ -335,12 +335,19 @@ body {
 
 /* --- ヒートマップエリア --- */
 #heat_area {
-    width: 420px;
-    height: 250px;
+    width: 460px;
+    height: 300px;
+}
+
+#heat_color {
+    height: 30px;
+    margin: 10px 0px;
+    
 }
 
 .heat-radio {
-    margin-bottom: 20px;
+    margin: 15px 0px;
+    padding: 5px;
 }
 
 
