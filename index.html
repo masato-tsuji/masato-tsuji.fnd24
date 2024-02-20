@@ -120,36 +120,56 @@
       <div id="heat_temp">
         <span>0</span><span>10</span><span>20</span><span>30</span><span>39</span>
       </div>
-      <form class="heat-radio" name="heat_year">
-        <input name="radio_year" type='radio' value="2021">2021年
-        <input name="radio_year" type='radio' value="2022">2022年
-        <input name="radio_year" type='radio' value="2023">2023年
+      <form class="heat-radio-form" name="heat_year">
+        <input class="heat-radio" id="y2003" name="radio_year" type='radio' value="2003">
+        <label for="y2003">2003年</label>
+        <input class="heat-radio" id="y2021" name="radio_year" type='radio' value="2021">
+        <label for="y2021">2021年</label>
+        <input class="heat-radio" id="y2022" name="radio_year" type='radio' value="2022">
+        <label for="y2022">2022年</label>
+        <input class="heat-radio" id="y2023" name="radio_year" type='radio' value="2023">
+        <label for="y2023">2023年</label>
       </form>
-
-      <form class="heat-radio" name="heat_month">
-        <input name="radio_month" type='radio' value="1">1月
-        <input name="radio_month" type='radio' value="2">2月
-        <input name="radio_month" type='radio' value="3">3月
-        <input name="radio_month" type='radio' value="4">4月
-        <input name="radio_month" type='radio' value="5">5月
-        <input name="radio_month" type='radio' value="6">6月
+      
+      <form class="heat-radio-form" name="heat_month">
+        <input class="heat-radio" id="m01" name="radio_month" type='radio' value="1">
+        <label for="m01">1月</label>
+        <input class="heat-radio" id="m02" name="radio_month" type='radio' value="2">
+        <label for="m02">2月</label>
+        <input class="heat-radio" id="m03" name="radio_month" type='radio' value="3">
+        <label for="m03">3月</label>
+        <input class="heat-radio" id="m04" name="radio_month" type='radio' value="4">
+        <label for="m04">4月</label>
+        <input class="heat-radio" id="m05" name="radio_month" type='radio' value="5">
+        <label for="m05">5月</label>
+        <input class="heat-radio" id="m06" name="radio_month" type='radio' value="6">
+        <label for="m06">6月</label>
         <br>
-        <input name="radio_month" type='radio' value="7">7月
-        <input name="radio_month" type='radio' value="8">8月
-        <input name="radio_month" type='radio' value="9">9月
-        <input name="radio_month" type='radio' value="10">10月
-        <input name="radio_month" type='radio' value="11">11月
-        <input name="radio_month" type='radio' value="12">12月
+        <input class="heat-radio" id="m07" name="radio_month" type='radio' value="7">
+        <label for="m07">7月</label>
+        <input class="heat-radio" id="m08" name="radio_month" type='radio' value="8">
+        <label for="m08">8月</label>
+        <input class="heat-radio" id="m09" name="radio_month" type='radio' value="9">
+        <label for="m09">9月</label>
+        <input class="heat-radio" id="m10" name="radio_month" type='radio' value="10">
+        <label for="m10">10月</label>
+        <input class="heat-radio" id="m11" name="radio_month" type='radio' value="11">
+        <label for="m11">11月</label>
+        <input class="heat-radio" id="m12" name="radio_month" type='radio' value="12">
+        <label for="m12">12月</label>
       </form>
-
-      <form class="heat-radio" name="heat_kind">
-        <input name="radio_kind" type='radio' value="max">最大
-        <input name="radio_kind" type='radio' value="min">最小
-        <input name="radio_kind" type='radio' value="ave">平均
+      
+      <form class="heat-radio-form" name="heat_kind">
+        <input class="heat-radio" id="h_max" name="radio_kind" type='radio' value="max">
+        <label for="h_max">最大</label>
+        <input class="heat-radio" id="h_min" name="radio_kind" type='radio' value="min">
+        <label for="h_min">最小</label>
+        <input class="heat-radio" id="h_ave" name="radio_kind" type='radio' value="ave">
+        <label for="h_ave">平均</label>
       </form>
 
       <div id="heat_buttons">
-        <button class="heat-btn" id="heat_exec" type="button">実 行</button>
+        <!-- <button class="heat-btn" id="heat_exec" type="button">実 行</button> -->
         <button class="heat-btn" id="heat_reset" type="button">リセット</button>
       </div>
     </div>
