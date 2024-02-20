@@ -357,12 +357,14 @@ body {
 #heat_temp {
     display: flex;
     width: 420px;
+    padding-left: 20px;
+    gap: 0px 80px;
 }
 
 
 #heat_temp span {
     font-size: 18px;
-    padding: 0px 38px;
+    /* padding: 0px 38px; */
 }
 
 .heat-radio-form {
