@@ -1,11 +1,5 @@
 'use strict'
 
-// 地図のロック状態 => rxjs.jsファイルで使用
-let mapLocked;
-
-
-
-
 
 /**
  * 引数のidと一致する都道府県の情報を返す
