@@ -4,6 +4,9 @@
 let mapLocked;
 
 
+
+
+
 /**
  * 引数のidと一致する都道府県の情報を返す
  * @param {string} id - 都道府県を識別するためのid文字列 pref_xx
@@ -16,17 +19,20 @@ const getPrefInfo = id => {
 }
 
 /**
- * 
+ * マップのロック状態の取得および設定
+ * @returns {object} - value() 値を返す関数 、change() 引数で渡された真偽値を記憶
  */
-let mapLock = (locke) => {
-    let locked2 = locke;
-    const lock = () => {
-        return locked2;
-    };
-    mapLock.locked = () => locked2;
-    return lock;
-}
-mapLock(true);
+const mapLock = (() => {
+    let locked = false;
+    return {
+        value() {
+            return locked;
+        },
+        change(bool) {
+            locked = bool;
+        }
+    }
+})();
 
 
 /**
@@ -191,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // 地図ロック(※./lib/rxjs.jsにて変数使用)
             if (elm.id === "map_lock") {
-                mapLocked = elm.checked;
+                mapLock.change(elm.checked);
             }
 
             // 知名度UP
