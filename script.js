@@ -4,8 +4,6 @@
 let mapLocked;
 
 
-
-
 /**
  * 引数のidと一致する都道府県の情報を返す
  * @param {string} id - 都道府県を識別するためのid文字列 pref_xx
