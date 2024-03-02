@@ -115,6 +115,16 @@ const typing = (element) => {
     return execInterval;
 }
 
+const getRecordOfSvr = (elm) => {
+    fetch("https://addmessage-p3vh65al5q-uc.a.run.app?text=" + elm.id, {
+        method: "GET",
+    }).then(response => response.json())
+    .then(json => {
+        console.log(json);
+    });
+}
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -152,40 +162,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     tglMapLock.click();
                 }
                 setViewBox();
-
-                fetch("https://addmessage-p3vh65al5q-uc.a.run.app?text=" + elm.id, {
-                    method: "GET",
-                }).then(response => response.json())
-                .then(json => {
-                    console.log(json);
-                });
-
-
+                getRecordOfSvr(elm);
             }
 
             // 都道府県を知ろう
             if (elm.id === "manu_pref_knowit") {
                 hideAppElements();
                 knowit();
+                getRecordOfSvr(elm);
             }
             
             // 都道府県当てクイズ
             if (elm.id === "menu_pref_quiz") {
                 hideAppElements();
                 quiz();
-
-                fetch("https://addmessage-p3vh65al5q-uc.a.run.app?text=" + elm.id, {
-                    method: "GET",
-                }).then(response => response.json())
-                .then(json => {
-                    console.log(json);
-                });
+                getRecordOfSvr(elm);
             }
             
             // おまけ
             if (elm.id === "menu_bonus") {
                 hideAppElements();
                 heatMap();
+                getRecordOfSvr(elm);
             }
 
         });
