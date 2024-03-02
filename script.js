@@ -152,16 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     tglMapLock.click();
                 }
                 setViewBox();
-
-                // https://addmessage-p3vh65al5q-uc.a.run.app
-                fetch("https://us-central1-webapi-415111.cloudfunctions.net/addmessage?text=hello jms", {
-                    method: "GET",
-                }).then(response => response.text())
-                .then(text => {
-                    console.log(text);
-                });
-
-
             }
 
             // 都道府県を知ろう
