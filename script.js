@@ -156,9 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 // https://addmessage-p3vh65al5q-uc.a.run.app
                 fetch("https://us-central1-webapi-415111.cloudfunctions.net/addmessage?text=hello jms", {
                     method: "GET",
-                }).then(response => response.text())
-                .then(text => {
-                    console.log(text);
+                }).then(response => response.json())
+                .then(json => {
+                    console.log(json);
                 });
 
 
