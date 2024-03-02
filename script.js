@@ -154,7 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 setViewBox();
 
                 // https://addmessage-p3vh65al5q-uc.a.run.app
-                fetch("https://us-central1-webapi-415111.cloudfunctions.net/addmessage?text=hello jms", {
+                // fetch("https://us-central1-webapi-415111.cloudfunctions.net/addmessage?text=hello jms", {
+                fetch("https://addmessage-p3vh65al5q-uc.a.run.app?text=hello jms ok", {
                     method: "GET",
                 }).then(response => response.json())
                 .then(json => {
