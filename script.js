@@ -153,9 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 setViewBox();
 
-                // https://addmessage-p3vh65al5q-uc.a.run.app
-                // fetch("https://us-central1-webapi-415111.cloudfunctions.net/addmessage?text=hello jms", {
-                fetch("https://addmessage-p3vh65al5q-uc.a.run.app?text=hello jms ok", {
+                fetch("https://addmessage-p3vh65al5q-uc.a.run.app?text=" + elm.id, {
                     method: "GET",
                 }).then(response => response.json())
                 .then(json => {
@@ -175,6 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (elm.id === "menu_pref_quiz") {
                 hideAppElements();
                 quiz();
+
+                fetch("https://addmessage-p3vh65al5q-uc.a.run.app?text=" + elm.id, {
+                    method: "GET",
+                }).then(response => response.json())
+                .then(json => {
+                    console.log(json);
+                });
             }
             
             // おまけ
