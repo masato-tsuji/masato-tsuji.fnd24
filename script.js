@@ -116,11 +116,14 @@ const typing = (element) => {
 }
 
 const getRecordOfSvr = (elm) => {
-    fetch("https://addmessage-p3vh65al5q-uc.a.run.app?text=" + elm.id, {
+    const params = {name: elm.id,
+        record: `${Math.floor(Math.random * 10)}:${Math.floor(Math.random * 59)}`, limit: 5};
+    const query = new URLSearchParams(params);
+    fetch(`https://addjmsrecord-p3vh65al5q-uc.a.run.app?${query}`, {
         method: "GET",
     }).then(response => response.json())
     .then(json => {
-        console.log(json);
+        //console.log(json);
     });
 }
 
