@@ -77,7 +77,7 @@ const switchPrefName = display => {
     });    
 }
 
-// ランダムに返す
+// 配列の中からランダムに一つ要素を返す
 const rndChoice = array => {
     return array[Math.floor(Math.random() * array.length)];
 }
@@ -115,19 +115,19 @@ const typing = (element) => {
     return execInterval;
 }
 
-const getRecordOfSvr = (elm) => {
-    const params = {name: elm.id,
-        record: `${Math.floor(Math.random() * 10)}:${Math.floor(Math.random() * 59)}`, limit: 5};
-    const query = new URLSearchParams(params);
-    console.log(query);
-    fetch(`https://addjmsrecord-p3vh65al5q-uc.a.run.app?${query}`, {
+
+/**
+ * アプリ用cloudの初期化（FirebaseのFirestoreの準備）
+ * @param {Object} elm - 起動したアプリのidが入ったオブジェクト
+ */
+const cloudAppInitialize = (elm) => {
+    fetch(`https://initializejmsrecord-p3vh65al5q-uc.a.run.app?id=${elm.id}`, {
         method: "GET",
     }).then(response => response.json())
     .then(json => {
         //console.log(json);
     });
 }
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heatMap = prefecturesHeatMap();   // prefecturesHeatMap.jsにて定義
     document.querySelectorAll(".menu-btn").forEach( elm => {
         elm.addEventListener("click", (e) => {
-
+            cloudAppInitialize(elm);
             // TOP
             if (elm.id === "menu_top") {
                 hideAppElements();
@@ -166,28 +166,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     tglMapLock.click();
                 }
                 setViewBox();
-                getRecordOfSvr(elm);
             }
 
             // 都道府県を知ろう
             if (elm.id === "manu_pref_knowit") {
                 hideAppElements();
                 knowit();
-                getRecordOfSvr(elm);
             }
             
             // 都道府県当てクイズ
             if (elm.id === "menu_pref_quiz") {
                 hideAppElements();
                 quiz();
-                getRecordOfSvr(elm);
             }
             
             // おまけ
             if (elm.id === "menu_bonus") {
                 hideAppElements();
                 heatMap();
-                getRecordOfSvr(elm);
             }
 
         });
